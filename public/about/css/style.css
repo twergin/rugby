@@ -32,6 +32,49 @@ html { font-size: 100%; }
   html { font-size: 120%; }
 }
 
+[class*='col-'] {
+	float: left;
+	width: 100%;
+	text-align: center;
+	padding: 1rem;
+}
+
+/*Grid*/
+@media (min-width: 700px) {
+	.col-3-4 {
+		width: 75%;
+		background: #f1f1f1;
+		border-top: 6px solid #292929;
+		padding-top: 0;
+		
+	}
+	.col-1-4 {
+		width: 25%;
+		border-top: 6px solid #888888;
+	}
+	.col-1-8 {
+		width: 12.5%;
+		padding: 1%;
+		text-align: center;
+	}
+
+	.col-spacer {
+		width: 49.125%;
+		padding: 1%;
+		
+	}
+}
+
+.row {
+	width: 100%;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 /*-- HEADER
 ===================== */
 
@@ -108,7 +151,7 @@ html { font-size: 100%; }
    .lines:after                          { top:-.7rem; }
    .lines-button.x.close .lines          { background:transparent; }
 
-   .nav                      { float:left; padding-left: 5%; padding-right: 5%; margin-left: 5%; margin-right: 5%; font-family: 'Graduate', 'cursive';; font-size:1rem; text-align:center; background:#eeeeee; clear:left; width:90%; }
+   .nav                      { float:left; padding-left: 5%; padding-right: 5%; margin-left: 5%; margin-right: 5%; font-family: 'Graduate', 'cursive'; font-size:1rem; text-align:center; background:#eeeeee; clear:left; width:90%; }
    .nav li                   { display:block; border-bottom:solid 1px #aaaaaa; margin:0; padding:0; }
    .nav li a                 { display:block; padding:1rem 0 1rem; color:#460b59;}
    .nav li a:active          { color:#fbfbfb; background:#460b59; padding:12px 6px; }
@@ -117,111 +160,123 @@ html { font-size: 100%; }
    .nav .fa-angle-right      { display:block; float:right; margin-top:1px; }
 
 }
-/* =================
-	MAIN CONTENT
-==================*/
 
-.banner {
-	background: url(../img/big4.jpg) 0px -100px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	width: 100%;
-	height: auto;
-	min-height: 400px;
+/* PLAYER GRID */
+
+.title {
+	padding-top: 1rem;
+	margin-bottom: .5rem;
 }
 
-@media screen and (max-width: 900px) {
-	.banner {
-		background-position: 0px -50px;
-	}
+.heading3 {
+	text-align: center;
+	font-size: 1.5rem;
+	color: #222222;
+	margin-bottom: 1rem;
+	font-family: 'Graduate', 'cursive';
 }
 
-@media screen and (min-width: 900px) {
-	.banner {
-		min-height: 600px;
-	}
+
+.player-icon {
+	background: #460b59;
+	height: 50px;
+	width: 50px;
+	margin: 0;
+	font-size: 24px;
+	color: #FFFFFF;
+	border-radius: 25px;
+	text-align: center;
 }
 
-.banner:after {
+.player-icon p {
+	line-height: 0px;
+}
+
+.player-icon:hover, .player-icon:focus {
+	background: #ffffff;
+	color: #470b59;
+	font-size: 24px;
+}
+
+.front {
+	padding-left: 39%;
+}
+
+.second {
+	padding-left: 43%;
+}
+
+.flank {
+	padding-left: 39%;
+}
+
+.eightman {
+	padding-left: 47%;
+}
+
+.scrumhalf {
+	padding-left: 47%;
+}
+
+.flyhalf {
+	padding-left: 55%;
+}
+
+.inside-center {
+	padding-left: 63%;
+}
+
+.outside-weak-wing {
+	padding-left: 23%;
+}
+
+.strong-wing {
+	padding-left: 79%;
+}
+
+.fullback {
+	padding-left: 47%;
+}
+
+/* 	SIDEBAR */
+
+.sidebar {
+	display: inline-block;
+	background: #292929;
+	font-family: 'Graduate', 'cursive';
+	min-height: 679px;
+}
+
+.sidebar-title {
+	text-align: center;
+	font-size: 1.5rem;
+	color: #FFFFFF;
+	margin-bottom: 1rem;
+}
+
+.player-info {
+	background: #FFFFFF;
+	border-bottom: 1px solid #eeeeee;
+	color: #222222;
+	margin-bottom: 1rem;
+}
+
+.player-info:after {
   content: "";
   display: table;
   clear: both;
 }
 
-
-@media screen and (min-width: 200px) {
-	.headline {
-		margin-left: 3%;
-		float: left;
-		width: 80%;
-		font-family: 'Graduate', 'cursive';
-		margin-bottom: 5rem;
-	}
-}
-
-@media screen and (min-width: 900px) {
-	.headline {
-		margin-left: 5%;
-		width: 50%;
-	}
-}
-
-@media screen and (min-width: 200px) {
-	.headline h1 {
-		font-size: 2rem;
-		color: #fff;
-		padding-top: 5rem;
-		margin-bottom: 0;
-		padding-bottom: 2rem;
-	}
-}
-
-@media screen and (min-width: 400px) {
-	.headline h1 {
-		font-size: 3rem;
-		
-	}
-}
-
-@media screen and (min-width: 700px) {
-	.headline h1 {
-		font-size: 4rem;
-		padding-top: 6rem;
-	}
-}
-
-@media screen and (min-width: 900px) {
-	.headline h1 {
-		font-size: 4rem;
-		padding-top: 9rem;
-	}
-}
-
-
-
-.box-link {
-	display: block;
-	letter-spacing: 1px;
-	font-weight: normal;
+.player-info p {
 	float: left;
-	width: 120px;
-	padding: 5px 5px;
-	color: #fff;
-	border: 2px solid #fff;
-	text-align: center;
-	text-decoration: none;
-	margin-bottom: 2rem;
-}
-
-.box-link:hover {
-	background: #FFFFFF;
-	color: #460b59;
-}
-
-
-
-
-
-
-
+	clear: left;
+	margin: .8rem 0;
 	
+}
+
+.player-pic {
+	float: right;
+	display: inline-block;
+	width: 40%;
+	height: auto;
+}

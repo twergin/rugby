@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+    
+		<title>Winona State University Men's Rugby Club</title>
+		
+		<!-- META
+        ============================================================== -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		
+		<!-- CSS // FAVICONS // FONTS
+        ============================================================== -->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="../css/normalize.css">
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="shortcut icon" href="">
+		<link href='http://fonts.googleapis.com/css?family=Graduate' rel='stylesheet' type='text/css'>
+		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="../img/favicon.ico" type="image/x-icon"> 
+		
+	</head>
+
+	<body>
+	
+		<div class="container">
+			
+			<!-- HEADER
+			============================================================== -->
+			<div class="header-global">
+			
+				<div class="logo">
+					
+					<img src="../img/logo2.png" />
+				
+				</div>
+				
+				<div class="responsive-nav">
+                    
+                    <button type="button" class="lines-button pull" role="button">
+                        <span class="lines"></span>
+                    </button>
+			
+				<ul class="nav">
+					
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="about">About</a></li>
+					<li><a href="schedule">Schedule</a></li>
+					<li><a href="gallery">Gallery</a></li>
+					<li><a href="contact">Contact</a></li>
+				
+				</ul>
+			
+			</div>
+				
+			</div>
+
+			<div class="col-3-4">
+
+				<div class="row title">
+				<h3 class="heading3">Meet the Team - Click any Position Below</h3>
+				</div>
+
+				<div class="row front">
+					<!-- front row -->
+					<div class="col-1-8">
+						<div class="player-icon"></br><p>1</p></div>
+					</div>
+					<div class="col-1-8">
+						<div class="player-icon"></br><p>2</p></div>
+					</div>
+					<div class="col-1-8">
+						<div class="player-icon"></br><p>3</p></div>
+					</div>
+					<!-- end front row -->
+				</div>
+
+				<div class="row second">
+					<!-- second row -->
+					<div class="col-1-8">
+						<div class="player-icon"></br><p>4</p></div>
+					</div>
+					<div class="col-1-8">
+						<div class="player-icon"></br><p>5</p></div>
+					</div>
+					<!-- end second row -->
+				</div>
+
+				<div class="row flank">
+					<!-- flankers row -->
+					<div class="col-1-8">
+						<div class="player-icon"></br><p>6</p></div>
+					</div>
+
+					<div class="col-1-8">
+					<!-- SPACER -->
+					</div>
+
+					<div class="col-1-8">
+						<div class="player-icon"></br><p>7</p></div>
+					</div>
+					<!-- end flankers row -->
+				</div>
+
+				<div class="row eightman">
+					<!-- eight man row -->
+					<div class="col-1-8">
+						<div class="player-icon"></br><p>8</p></div>
+					</div>
+					<!-- end eight man row -->
+				</div>
+
+				<div class="row scrumhalf">
+					<!-- scrumhalf row -->
+					<div class="col-1-8">
+						<div class="player-icon"></br><p>9</p></div>
+					</div>
+					<!-- end scrumhalf row -->
+				</div>
+
+				<div class="row flyhalf">
+					<!-- flyhalf row -->
+					<div class="col-1-8">
+						<div class="player-icon"></br><p>10</p></div>
+					</div>
+					<!-- end flyhalf row -->
+				</div>
+
+				<div class="row inside-center">
+					<!-- inside center row -->
+					<div class="col-1-8">
+						<div class="player-icon"></br><p>12</p></div>
+					</div>
+					<!-- end inside center row -->
+				</div>
+
+				<div class="row outside-weak-wing">
+					<!-- outisde center/weakside wing row -->
+					<div class="col-1-8">
+						<div class="player-icon"></br><p>11</p></div>
+					</div>
+
+					<div class="col-spacer">
+					<!-- spacer -->
+					</div>
+
+					<div class="col-1-8">
+						<div class="player-icon"></br><p>13</p></div>
+					</div>
+					<!-- end outside center/weakside wing row -->
+				</div>
+				
+				<div class="row strong-wing">
+					<!-- strongside wing row -->
+					<div class="col-1-8">
+						<div class="player-icon"></br><p>14</p></div>
+					</div>
+					<!-- end strongside wing row -->
+				</div>
+
+				<div class="row fullback">
+					<!-- fullback row -->
+					<div class="col-1-8">
+						<div class="player-icon"></br><p>15</p></div>
+					</div>
+					<!-- end fullback row -->
+				</div>
+				
+
+			</div>
+
+			<div class="col-1-4 sidebar">
+				
+				<h3 class="sidebar-title">{{ player.position }}</h3>
+
+		
+				<div class="player-info">
+					<img src="../img/me.jpg" alt="" class="player-pic">
+					<p class="player-name">{{ player.name }}</p>
+					<p class="player-age">{{ player.age  }}</p>
+					<p class="player-major">{{ player.major }}</p>
+				</div>
+
+				<div class="player-info">
+					<img src="../img/me.jpg" alt="" class="player-pic">
+					<p class="player-name">{{ player.name }}</p>
+					<p class="player-age">{{ player.age  }}</p>
+					<p class="player-major">{{ player.major }}</p>
+				</div>
+				
+
+			</div>
+
+
+
+
+		</div>
+
+
+
+</body>
+
+</html>
