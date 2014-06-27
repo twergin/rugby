@@ -13,6 +13,7 @@
         ============================================================== -->
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/reset.css">
 		<link rel="shortcut icon" href="">
 		<link href='http://fonts.googleapis.com/css?family=Graduate' rel='stylesheet' type='text/css'>
 		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -34,19 +35,23 @@
 				
 				</div>
 				
-				<div class="nav">
-					
-					<ul class="navbar">
-
-						<a href="#"><li><h2>Home</h2></li></a>
-						<a href="about"><li><h2>About</h2></li></a>
-						<a href="schedule"><li><h2>Schedule</h2></li></a>
-						<a href="gallery"><li><h2>Gallery</h2></li></a>
-						<a href="contact"><li><h2>Contact</h2></li></a>
+				<div class="responsive-nav">
+                    
+                    <button type="button" class="lines-button pull" role="button">
+                        <span class="lines"></span>
+                    </button>
 			
-					</ul>
-	
-				</div>
+				<ul class="nav">
+					
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="about">About</a></li>
+					<li><a href="schedule">Schedule</a></li>
+					<li><a href="gallery">Gallery</a></li>
+					<li><a href="contact">Contact</a></li>
+				
+				</ul>
+			
+			</div>
 				
 			</div>
 			
@@ -58,6 +63,9 @@
 			</div>
 		
 		</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/main.js"></script>	
 	
 	</body>
 

@@ -6,147 +6,195 @@
   box-sizing: border-box;
 }
 
-/*-- BODY
+/*======================
+	global styles
 ===================== */
 body {
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
-	background: #fbfbfb;
+	background: #ffffff;
+}
+
+a {
+	text-decoration: none;
+}
+
+html { font-size: 100%; }
+ 
+/* Medium screens (640px) */
+@media (min-width: 40rem) { 
+  html { font-size: 112%; }
+}
+ 
+/* Large screens (1024px) */
+@media (min-width: 64rem) { 
+  html { font-size: 120%; }
 }
 
 /*-- HEADER
 ===================== */
 
-@media screen and (min-width:320px) {
-	.header-global {
-		display: inline-block;
-	}
-}
-
-@media screen and (min-width:1000px) {
 .header-global {
-	width: 100%;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	margin-right: auto;
-	background: #fff;
-	height: 83px;
 	font-family: 'Graduate', 'cursive';
-}
-}
-
-@media screen and (min-width:320px) {
-	.logo {
-		display: block;
-		text-align: center;
-		margin-left: 5%;
-		width: 302px;
-		height: 83px;
-		background: url(../img/logo2.png);
-	}
+	width: 100%;
+	margin-top: .8rem;
+	margin-bottom: .8rem;
+	margin-right: auto;
+	height: auto;
 }
 
-@media screen and (min-width:640px) {
-	.logo {
-		text-align: left;
-		float: left;
-		background: url(../img/logo2.png);
-	}
+/* this is a little fix.  if an element contains only floated child elements, it won't have a height, so this fixes it. */
+.header-global:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-@media screen and (min-width:320px) {
-	.nav-container {
-		display: inline-block;
-		text-align: center;
-		clear: both;
-		width: 200px;
-		font-family: 'Graduate', 'cursive';
-		color: #430b54;
-	}
+.header a {
+	
 }
 
-@media screen and (min-width:640px) {
-	.nav-container {
-		clear: none;
-		float: right;
-		width: 300px;
-	}
+.logo {
+	display: inline-block;
+	float: left;
+}
+.pull { 
+	display: none; 
+	text-indent: -9999px; 
 }
 
-@media screen and (min-width:1000px) {
-	.nav-container {
-		width: 900px;
-	}
+.nav {
+	float: right;
+	display: block;
+	list-style: none;
+	margin-right: 2rem;
+	margin-top: 2rem;
 }
 
-@media screen and (min-width:320px) {
-	.navbar {
-		list-style: none;
-		margin: auto;
-		text-align: center;
-	}
+.nav li {
+	display: inline-block;
+	
+	font-size: 1.25rem;
 }
 
-@media screen and (min-width:640px) {
-	.navbar {
-		margin-top: 15px;
-		width: 100%;
-	}
+.nav a {
+	color: #460b59;
+	padding: .5rem;
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition:    all 0.4s ease 0s;
+	-o-transition:      all 0.4s ease 0s;
+	transition:         all 0.4s ease 0s; 
 }
 
-@media screen and (min-width:1000px) {
-	.navbar ul {
-		
-		
-	}
+.nav a:hover, .nav a:focus {
+	background: #460b59;
+	color: #FFFFFF;
 }
 
-.navbar li:hover {
-	background: #d6d6d6;
-}
+/* responsive navbar, changing to expand button */
+@media screen and (max-width: 900px) {
 
-@media screen and (min-width:320px) {
-	li {
-		color: #171717;
-		display: inline-block;
-		padding-left: 25px;
-		padding-right: 25px;
-		font-size: 12px;
-		color: #430b54;
-	}
-}
+.nav                      { display:none; height:auto; }
+   .responsive-nav           { position: relative; }
+   .pull                     { display:block; float:right; margin:2rem 0 0 3rem;  background:none; border:none; }
+   .pull span                { display:block; }
+   .lines-button             { padding:.65rem; transition:.3s; cursor:pointer; user-select:none; }
+   .lines                    { display:inline-block; width:2rem; height:.3rem; background:#460b59; transition:0.3s; position:relative; }
+   .lines:before,
+   .lines:after                          { display:inline-block; width:2rem; height:.3rem; background:#460b59; transition:0.3s; position:absolute;
+                                           left:0; content:'';}
+   .lines:before                         { top:.65rem; }
+   .lines:after                          { top:-.7rem; }
+   .lines-button.x.close .lines          { background:transparent; }
 
-@media screen and (min-width:640px) {
-	li {
-		padding-left: 20px;
-		padding-right: 20px;
-		font-size: 14px;
-	}
+   .nav                      { float:left; padding-left: 5%; padding-right: 5%; margin-left: 5%; margin-right: 5%; font-family: 'Graduate', 'cursive';; font-size:1rem; text-align:center; background:#eeeeee; clear:left; width:90%; }
+   .nav li                   { display:block; border-bottom:solid 1px #aaaaaa; margin:0; padding:0; }
+   .nav li a                 { display:block; padding:1rem 0 1rem; color:#460b59;}
+   .nav li a:active          { color:#fbfbfb; background:#460b59; padding:12px 6px; }
+   .nav li#current a:active  { color:#460b59; background:#fbfbfb; padding:12px 0; }
+   .nav li:last-child        { border:none; }
+   .nav .fa-angle-right      { display:block; float:right; margin-top:1px; }
+
 }
+/* =================
+	MAIN CONTENT
+==================*/
 
 .banner {
 	background: url(../img/big4.jpg) 0px -100px;
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 100%;
-	min-height: 600px;
+	height: auto;
+	min-height: 400px;
 }
 
-.tag {
-	float: left;
-	margin-left: 5%;
-	width: 50%;
-	font-family: 'Graduate', 'cursive';
+@media screen and (max-width: 900px) {
+	.banner {
+		background-position: 0px -50px;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.banner {
+		min-height: 600px;
+	}
+}
+
+.banner:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 
-.tag h1 {
-	font-size: 80px;
-	color: #fff;
-	margin-top: 150px;
-	margin-bottom: 0px;
-	padding-bottom: 0px;
+@media screen and (min-width: 200px) {
+	.tag {
+		margin-left: 3%;
+		float: left;
+		width: 80%;
+		font-family: 'Graduate', 'cursive';
+		margin-bottom: 5rem;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.tag {
+		margin-left: 5%;
+		width: 50%;
+	}
+}
+
+@media screen and (min-width: 200px) {
+	.tag h1 {
+		font-size: 2rem;
+		color: #fff;
+		padding-top: 5rem;
+		margin-bottom: 0;
+		padding-bottom: 2rem;
+	}
+}
+
+@media screen and (min-width: 400px) {
+	.tag h1 {
+		font-size: 3rem;
+		
+	}
+}
+
+@media screen and (min-width: 700px) {
+	.tag h1 {
+		font-size: 4rem;
+		padding-top: 6rem;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.tag h1 {
+		font-size: 4rem;
+		padding-top: 9rem;
+	}
 }
 
 
@@ -162,6 +210,7 @@ body {
 	border: 2px solid #fff;
 	text-align: center;
 	text-decoration: none;
+	margin-bottom: 2rem;
 }
 
 .button a:hover {
