@@ -43,6 +43,10 @@ it didn't, google the error it gives you and there should be documentation on ho
 and js, there are folders for the separate pages and their assets.  'fa' is for font awesome, it's an 
 icon pack.  you shouldn't need to modify anything there.
 
+6/27/14 
+-----
+<i>Set up the project folder with some build tools.  Reworked the code I had for the homepage.  Looks the same as it did last time you saw it, but underneath it's quite a bit different.  should be fully responsive but I haven't tested extensviely yet.</i>
+
 <b>Css</b>
 
 -  The three stylesheets you'll come across are style.css, normalize.css, and reset.css. style is your 
@@ -56,8 +60,4 @@ reset.
 
 -  there will be more to the main.js file later, but for now it's just animating the slide in/out of 
 the navigation drawer on smaller screens
-
-6/27/14 
------
-<i>Set up the project folder with some build tools.  Reworked the code I had for the homepage.  Looks the same as it did last time you saw it, but underneath it's quite a bit different.  should be fully responsive but I haven't tested extensviely yet.</i>
 
