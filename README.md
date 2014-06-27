@@ -10,10 +10,6 @@ the directory you want to keep everything in, then run 'git clone https://github
 it will download everything you need.
 
 
-6/27/14 
------
-<i>Set up the project folder with some build tools.  Reworked the code I had for the homepage.  Looks the same as it did last time you saw it, but underneath it's quite a bit different.  should be fully responsive but I haven't tested extensviely yet.</i>
-
 <b>General Stuff</b>
 
 - "Rugby" is the root folder.  everything inside it except for the "public" folder are just workflow 
@@ -61,5 +57,7 @@ reset.
 -  there will be more to the main.js file later, but for now it's just animating the slide in/out of 
 the navigation drawer on smaller screens
 
-
+6/27/14 
+-----
+<i>Set up the project folder with some build tools.  Reworked the code I had for the homepage.  Looks the same as it did last time you saw it, but underneath it's quite a bit different.  should be fully responsive but I haven't tested extensviely yet.</i>
 
