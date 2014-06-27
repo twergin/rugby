@@ -1,16 +1,18 @@
 rugby
 -----
 
-<i>I'll try to document stuff here as I progress so it's a bit easier to follow along with.  let me know if 
-there's anything you'd like me to elaborate on.</i>
+I'll keep this readme updated as I progress so it's a bit easier to follow along with.  Let me know if 
+there's anything you'd like me to elaborate on.  Once I make some more progress, I'll publicly host the site somewhere temporarily.
 
-6/27/14
---
-
--  If you're unfamiliar with github, it's just a tool to use with Git version control.  once you setup a github 
+If you're unfamiliar with github, it's just a tool to use with Git version control.  once you setup a github 
 account and git, you'll have access to a new command line tool called git bash.  just run git bash in 
 the directory you want to keep everything in, then run 'git clone https://github.com/twergin/rugby' and 
 it will download everything you need.
+
+
+6/27/14 
+-----
+<i>Set up the project folder with some build tools.  Reworked the code I had for the homepage.  Looks the same as it did last time you saw it, but underneath it's quite a bit different.  should be fully responsive but I haven't tested extensviely yet.</i>
 
 <b>General Stuff</b>
 
