@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html ng-app="rugby">
     <head>
     
 		<title>Winona State University Men's Rugby Club</title>
@@ -21,7 +21,7 @@
 		
 	</head>
 
-	<body>
+	<body  ng-controller="TeamCtrl">
 	
 		<div class="container">
 			
@@ -61,16 +61,17 @@
 				<h3 class="heading3">Meet the Team - Click any Position Below</h3>
 				</div>
 
+
 				<div class="row front">
 					<!-- front row -->
 					<div class="col-1-8">
-						<div class="player-icon"></br><p>1</p></div>
+						<div class="player-icon" ng-click="filtering('prop')"></br><p>1</p></div>
 					</div>
 					<div class="col-1-8">
-						<div class="player-icon"></br><p>2</p></div>
+						<div class="player-icon" ng-click="filtering('hooker')"></br><p>2</p></div>
 					</div>
 					<div class="col-1-8">
-						<div class="player-icon"></br><p>3</p></div>
+						<div class="player-icon"  ng-click="filtering('prop')"> </br><p>3</p></div>
 					</div>
 					<!-- end front row -->
 				</div>
@@ -78,10 +79,10 @@
 				<div class="row second">
 					<!-- second row -->
 					<div class="col-1-8">
-						<div class="player-icon"></br><p>4</p></div>
+						<div class="player-icon" ng-click="filtering('lock')"></br><p>4</p></div>
 					</div>
 					<div class="col-1-8">
-						<div class="player-icon"></br><p>5</p></div>
+						<div class="player-icon" ng-click="filtering('lock')"></br><p>5</p></div>
 					</div>
 					<!-- end second row -->
 				</div>
@@ -89,7 +90,7 @@
 				<div class="row flank">
 					<!-- flankers row -->
 					<div class="col-1-8">
-						<div class="player-icon"></br><p>6</p></div>
+						<div class="player-icon" ng-click="filtering('flanker')"></br><p>6</p></div>
 					</div>
 
 					<div class="col-1-8">
@@ -97,7 +98,7 @@
 					</div>
 
 					<div class="col-1-8">
-						<div class="player-icon"></br><p>7</p></div>
+						<div class="player-icon" ng-click="filtering('flanker')"></br><p>7</p></div>
 					</div>
 					<!-- end flankers row -->
 				</div>
@@ -105,7 +106,7 @@
 				<div class="row eightman">
 					<!-- eight man row -->
 					<div class="col-1-8">
-						<div class="player-icon"></br><p>8</p></div>
+						<div class="player-icon" ng-click="filtering('eightman')"></br><p>8</p></div>
 					</div>
 					<!-- end eight man row -->
 				</div>
@@ -113,7 +114,7 @@
 				<div class="row scrumhalf">
 					<!-- scrumhalf row -->
 					<div class="col-1-8">
-						<div class="player-icon"></br><p>9</p></div>
+						<div class="player-icon" ng-click="filtering('scrumhalf')"></br><p>9</p></div>
 					</div>
 					<!-- end scrumhalf row -->
 				</div>
@@ -121,7 +122,7 @@
 				<div class="row flyhalf">
 					<!-- flyhalf row -->
 					<div class="col-1-8">
-						<div class="player-icon"></br><p>10</p></div>
+						<div class="player-icon" ng-click="filtering('flyhalf')"></br><p>10</p></div>
 					</div>
 					<!-- end flyhalf row -->
 				</div>
@@ -129,7 +130,7 @@
 				<div class="row inside-center">
 					<!-- inside center row -->
 					<div class="col-1-8">
-						<div class="player-icon"></br><p>12</p></div>
+						<div class="player-icon" ng-click="filtering('insidecenter')"></br><p>12</p></div>
 					</div>
 					<!-- end inside center row -->
 				</div>
@@ -137,7 +138,7 @@
 				<div class="row outside-weak-wing">
 					<!-- outisde center/weakside wing row -->
 					<div class="col-1-8">
-						<div class="player-icon"></br><p>11</p></div>
+						<div class="player-icon" ng-click="filtering('wing')"></br><p>11</p></div>
 					</div>
 
 					<div class="col-spacer">
@@ -145,7 +146,7 @@
 					</div>
 
 					<div class="col-1-8">
-						<div class="player-icon"></br><p>13</p></div>
+						<div class="player-icon" ng-click="filtering('outsidecenter')"></br><p>13</p></div>
 					</div>
 					<!-- end outside center/weakside wing row -->
 				</div>
@@ -153,7 +154,7 @@
 				<div class="row strong-wing">
 					<!-- strongside wing row -->
 					<div class="col-1-8">
-						<div class="player-icon"></br><p>14</p></div>
+						<div class="player-icon" ng-click="filtering('wing')"></br><p>14</p></div>
 					</div>
 					<!-- end strongside wing row -->
 				</div>
@@ -161,7 +162,7 @@
 				<div class="row fullback">
 					<!-- fullback row -->
 					<div class="col-1-8">
-						<div class="player-icon"></br><p>15</p></div>
+						<div class="player-icon" ng-click="filtering('fullback')"></br><p>15</p></div>
 					</div>
 					<!-- end fullback row -->
 				</div>
@@ -170,24 +171,18 @@
 			</div>
 
 			<div class="col-1-4 sidebar">
+
 				
-				<h3 class="sidebar-title">{{ player.position }}</h3>
+				<h3 class="sidebar-title">{{ sidebarTitle }}</h3>
 
 		
-				<div class="player-info">
-					<img src="../img/me.jpg" alt="" class="player-pic">
-					<p class="player-name">{{ player.name }}</p>
-					<p class="player-age">{{ player.age  }}</p>
-					<p class="player-major">{{ player.major }}</p>
+				<div class="player-info" ng-repeat="player in players | filter:{position:filteredPosition}">
+					<img src="{{ player.picture }}" height="50" width="50" alt="" class="player-pic">
+					<p class="player-name">Name: {{ player.name }}</p>
+					<p class="player-position">Position: {{ player.position  }}</p>
+					<p class="player-major">Major: {{ player.major }}</p>
+					<p class="town">Home Town: {{ player.town }}</p>
 				</div>
-
-				<div class="player-info">
-					<img src="../img/me.jpg" alt="" class="player-pic">
-					<p class="player-name">{{ player.name }}</p>
-					<p class="player-age">{{ player.age  }}</p>
-					<p class="player-major">{{ player.major }}</p>
-				</div>
-				
 
 			</div>
 
@@ -196,7 +191,18 @@
 
 		</div>
 
+	</div>
 
+</div>
+
+<script src="vendor/angular.js"></script>
+<script src="vendor/angular-resource.js"></script>
+<script src="vendor/angular-route.js"></script>
+<script src="vendor/angular-messages.js"></script>
+<script src="app.js"></script>
+<script src="controllers/team.js"></script>
+<script src="controllers/add.js"></script>
+<script src="services/player.js"></script>
 
 </body>
 

@@ -270,7 +270,8 @@ html { font-size: 100%; }
 .player-info p {
 	float: left;
 	clear: left;
-	margin: .8rem 0;
+	margin: .5rem;
+	font-size: .8rem;
 	
 }
 
