@@ -43,9 +43,10 @@ html { font-size: 100%; }
 @media (min-width: 700px) {
 	.col-3-4 {
 		width: 75%;
-		background: #f1f1f1;
+		background: #bfbfbf;
 		border-top: 6px solid #292929;
 		padding-top: 0;
+		padding-bottom: 3rem;
 		
 	}
 	.col-1-4 {
@@ -268,11 +269,11 @@ html { font-size: 100%; }
 }
 
 .player-info p {
-	float: left;
-	clear: left;
-	margin: .5rem;
+	text-align: left;
+	margin: .3rem;
 	font-size: .8rem;
-	
+	padding-top: 5px;
+	line-height: 1rem;
 }
 
 .player-pic {
@@ -281,3 +282,43 @@ html { font-size: 100%; }
 	width: 40%;
 	height: auto;
 }
+
+/* =======================
+	ADD PLAYER FORM
+======================= */
+
+.form-container {
+	text-align: center;
+	margin: auto;
+	padding: 50px;
+	background: #707070;
+	font-family: arial, sans-serif;
+	border-bottom: 3px solid #460b59;
+}
+
+.form-group {
+	margin: 30px;
+}
+
+.form-control {
+	width: 200px;
+	font-family: arial, sans-serif;
+}
+
+.add {
+	border-bottom: 3px solid #460b59;
+	margin-bottom: 0;
+}
+
+.add-title {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+.add-title, .add-info {
+	text-align: center;
+	color: #FFFFFF;
+	font-family: arial, sans-serif;
+}
+

@@ -5,9 +5,12 @@ var application_root = __dirname,
     mongoose = require( 'mongoose' ),
     async = require( 'async' ),
     bodyParser = require('body-parser'),
-    request = require('request')
-
-
+    request = require('request'),
+    auth = require('http-auth'),
+    basic = auth.basic({
+    realm: "about",
+    file: __dirname + "/data/users.htpasswd"
+	});
 
 var playerSchema = new mongoose.Schema ({
 	name: String,
@@ -23,17 +26,19 @@ mongoose.connect('localhost');
 
 //Create server
 var app = express();
-
-
+app.use('/about/add', auth.connect(basic));
 app.use('/', express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
 
-
-
 //Start server
 var port = 3000;
+
+app.get('/about', function(req, res, err) {
+	if(err) return next(err);
+	res.send("authenticated!");
+});
 
 app.get('/about/players', function(req, res, next) {
 	var query = Player.find();
@@ -56,7 +61,7 @@ app.get('/about/players/:id', function(req, res) {
 app.post('/about/players', function(req, res, next) {
 	var player = new Player ({
 		name: req.body.playerName,
-		position: req.body.playerPosition.replace(/ /g, ''),
+		position: req.body.playerPosition,
 		major: req.body.playerMajor,
 		town: req.body.playerTown,
 		picture: req.body.playerPicture

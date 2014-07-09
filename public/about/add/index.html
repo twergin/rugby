@@ -22,40 +22,73 @@
 	</head>
 
 	<body>
+
+		<div class="header-global add">
+			
+			<div class="logo">
+					
+				<img src="../../img/logo2.png" />
+				
+			</div>
+				
+			<div class="responsive-nav">
+	                    
+	            <button type="button" class="lines-button pull" role="button">
+	            	<span class="lines"></span>
+	            </button>
+				
+				<ul class="nav">
+						
+					<li><a href="../../">Home</a></li>
+					<li><a href="../">About</a></li>
+					<li><a href="schedule">Schedule</a></li>
+					<li><a href="gallery">Gallery</a></li>
+					<li><a href="contact">Contact</a></li>
+					
+				</ul>
+				
+			</div>
+				
+		</div>
+
 	
-		<div class="container" ng-controller="AddCtrl">
+		<div class="form-container" ng-controller="AddCtrl">
+
+			<h3 class="add-title">Add player to database</h3>
+			<p class="add-info">enter all info for a player.  Link to player picture can be on any image host.</p>
+
 			
 			   <form class="form" method="post" ng-submit="addPlayer()" name="addForm" enctype="multipart/form-data">
         <div class="form-group" ng-class="{ 'has-success' : addForm.playerName.$valid && addForm.playerName.$dirty, 'has-error' : addForm.playerName.$invalid && addForm.playerName.$dirty }">
-          <input class="form-control" type="text" name="playerName" ng-model="playerName" placeholder="Enter Player name" required autofocus>
+          <input class="form-control" type="text" name="playerName" ng-model="playerName" placeholder="Player name" required autofocus>
           <div class="help-block text-danger" ng-if="addForm.playerName.$dirty" ng-messages="addForm.playerName.$error">
             <div ng-message="required">Player name is required.</div>
           </div>
         </div>
 
          <div class="form-group" ng-class="{ 'has-success' : addForm.playerPosition.$valid && addForm.playerPosition.$dirty, 'has-error' : addForm.playerPosition.$invalid && addForm.playerPosition.$dirty }">
-          <input class="form-control" type="text" name="playerPosition" ng-model="playerPosition" placeholder="Enter Player Position" required autofocus>
+          <input class="form-control" type="text" name="playerPosition" ng-model="playerPosition" placeholder="Player Position" required autofocus>
           <div class="help-block text-danger" ng-if="addForm.playerPosition.$dirty" ng-messages="addForm.playerPosition.$error">
             <div ng-message="required">Player Position is required.</div>
           </div>
         </div>
 
          <div class="form-group" ng-class="{ 'has-success' : addForm.playerMajor.$valid && addForm.playerMajor.$dirty, 'has-error' : addForm.playerMajor.$invalid && addForm.playerMajor.$dirty }">
-          <input class="form-control" type="text" name="playerMajor" ng-model="playerMajor" placeholder="Enter Player Major" required autofocus>
+          <input class="form-control" type="text" name="playerMajor" ng-model="playerMajor" placeholder="Player Major" required autofocus>
           <div class="help-block text-danger" ng-if="addForm.playerMajor.$dirty" ng-messages="addForm.playerMajor.$error">
             <div ng-message="required">Player Major is required.</div>
           </div>
         </div>
 
 		  <div class="form-group" ng-class="{ 'has-success' : addForm.playerTown.$valid && addForm.playerTown.$dirty, 'has-error' : addForm.playerTown.$invalid && addForm.playerTown.$dirty }">
-          <input class="form-control" type="text" name="playerTown" ng-model="playerTown" placeholder="Enter Player Town" required autofocus>
+          <input class="form-control" type="text" name="playerTown" ng-model="playerTown" placeholder="Player Town" required autofocus>
           <div class="help-block text-danger" ng-if="addForm.playerTown.$dirty" ng-messages="addForm.playerTown.$error">
             <div ng-message="required">Player Home Town is required.</div>
           </div>
         </div>
 
          <div class="form-group" ng-class="{ 'has-success' : addForm.playerPicture.$valid && addForm.playerPicture.$dirty, 'has-error' : addForm.playerPicture.$invalid && addForm.playerPicture.$dirty }">
-          <input class="form-control" type="text" name="playerPicture" ng-model="playerPicture" placeholder="Enter link to player picture" required autofocus>
+          <input class="form-control" type="text" name="playerPicture" ng-model="playerPicture" placeholder="Link to player picture" required autofocus>
           <div class="help-block text-danger" ng-if="addForm.playerPicture.$dirty" ng-messages="addForm.playerPicture.$error">
             <div ng-message="required">Link to Player Picture is Required.</div>
           </div>
